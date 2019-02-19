@@ -14,12 +14,12 @@ var options = {
 
 var MySQLStore = require('connect-mysql')(session),
     options = {
-      secret: 'secret squirrel',
-    	config: {
-    		user: 'jas-', 
-    		password: '', 
-    		database: 'c9'
-    	}
+      secret: crypto.createHash('md5').update('secret squirrel').digest('hex'),
+      config: {
+        user: 'dev', 
+        password: 'dev', 
+        database: 'c9'
+      }
     };
 
 var index = require('./routes/index');
