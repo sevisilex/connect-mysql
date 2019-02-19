@@ -75,8 +75,10 @@ var options = {
 This option enables transparent session encryption assisting
 
 ```javascript
+var secret = 'thesessionsecret';
+var secretmd5 = require('crypto').createHash('md5').update(secret).digest('hex');
 var options = {
-      secret: 'thesessionsecret',
+      secret: secretmd5,
       config: {
         user: 'dbuser', 
         password: 'dbpassword', 
